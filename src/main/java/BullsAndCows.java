@@ -1,43 +1,22 @@
-import sun.jvm.hotspot.ui.tree.RootTreeNodeAdapter;
-
-import java.util.Random;
-
 public class BullsAndCows {
 
-    Random random;
-    int[] bulls;
+    int innings = 0;
 
-    public BullsAndCows() {
-
-        random = new Random();
-        bulls = new int[3];
-
-        setRandomNumber();
+    public BullsAndCows(Computer computer, User user) {
+        isCoincide(computer, user);
     }
 
-    private void setRandomNumber() {
-        for (int i = 0; i < bulls.length; i++) {
-            bulls[i] = random.nextInt(10);
+    private void isCoincide(Computer computer, User user) {
+        for (int i = 0; i < 10; i++) {
 
-            // 두번째 숫자가 첫번째 숫자와 일치할 경우 다시 랜덤으로 뽑는다.
-            if (i == 1) {
-                if (bulls[i-1] == bulls[i]) {
-                    bulls[i] = random.nextInt(10);
-                }
-            }
-            // 세번째 숫자가 두번째와, 첫번째와 동일할 경우 다시 랜덤으로 뽑는다.
-            if (i == 2) {
-                if (bulls[i-1] == bulls[i]) {
-                    bulls[i] = random.nextInt(10);
-                    System.out.println("1");
-                }
+            innings++;
+            isEnd(innings);
+        }
+    }
 
-                if (bulls[i-2] == bulls[i]) {
-                    bulls[i] = random.nextInt(10);
-                    System.out.println("2");
-                }
-            }
-            System.out.println("number : " + bulls[i]);
+    private void isEnd(int innings) {
+        if (innings == 9) {
+            System.out.println("게임이 종료되었습니다.");
         }
     }
 }
