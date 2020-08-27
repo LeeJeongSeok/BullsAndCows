@@ -40,10 +40,11 @@ public class Computer {
     }
 
     public void findNumber(int[] numbers, Score score) {
+
         // 번호가 일치하는지 여부 판단 로직
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 0; j < bulls.length; j++) {
-               if (i == j && numbers[i] == bulls[j]) {
+               if (i == j && numbers[i] == bulls[j]) { // 질문으로 오는 숫
                    score.setStrike(1);
                    continue;
                }
@@ -52,13 +53,16 @@ public class Computer {
                    score.setBall(1);
                    continue;
                }
+
+               score.setOut(1);
             }
         }
+        System.out.println("here");
         showReuslt(score);
     }
 
     public void showReuslt(Score score) {
-        score.toString();
+        System.out.println(score.toString());
     }
 
 
