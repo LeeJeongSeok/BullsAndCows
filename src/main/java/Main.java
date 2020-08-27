@@ -11,6 +11,6 @@ public class Main {
             numbers[i] = scanner.nextInt();
         }
 
-        new User().isCoincide(numbers);
+        new User().isCoincide(numbers, new Score());
     }
 }

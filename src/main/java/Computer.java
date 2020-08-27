@@ -39,23 +39,27 @@ public class Computer {
         }
     }
 
-    public void findNumber(int[] numbers) {
+    public void findNumber(int[] numbers, Score score) {
         // 번호가 일치하는지 여부 판단 로직
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 0; j < bulls.length; j++) {
-                if (numbers[i] == bulls[i]) { // 자릿수와 숫자가 일치
-                    new Score().setStrike(1);
-                } else {
+               if (i == j && numbers[i] == bulls[j]) {
+                   score.setStrike(1);
+                   continue;
+               }
 
-                }
+               if (i != j && numbers[i] == bulls[j]) {
+                   score.setBall(1);
+                   continue;
+               }
             }
         }
-
-        // 결과를 Result에 던짐
+        showReuslt(score);
     }
 
-    public void showReuslt() {
-        new Score().toString();
+    public void showReuslt(Score score) {
+        score.toString();
     }
+
 
 }
