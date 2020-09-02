@@ -3,15 +3,15 @@ public class Score {
     int strike, ball, out = 0;
 
     public void setStrike(int strike) {
-        this.strike = strike;
+        this.strike += strike;
     }
 
     public void setBall(int ball) {
-        this.ball = ball;
+        this.ball += ball;
     }
 
     public void setOut(int out) {
-        this.out = out;
+        this.out += out;
     }
 
     @Override

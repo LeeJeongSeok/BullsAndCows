@@ -57,7 +57,6 @@ public class Computer {
                score.setOut(1);
             }
         }
-        System.out.println("here");
         showReuslt(score);
     }
 
@@ -65,5 +64,11 @@ public class Computer {
         System.out.println(score.toString());
     }
 
+    // 10회 동안 숫자를 비교한다.
+    public void result(int[] numbers) {
+        for (int i = 0; i < 10; i++) {
+            findNumber(numbers, new Score());
+        }
+    }
 
 }
