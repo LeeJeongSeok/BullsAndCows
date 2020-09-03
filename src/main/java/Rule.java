@@ -1,4 +1,4 @@
-public class Score {
+public class Rule {
 
     int strike, ball, out = 0;
 
