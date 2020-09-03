@@ -25,7 +25,6 @@ public class Number {
                     numbers[i] = random.nextInt(10);
                 }
             }
-            System.out.println("number : " + numbers[i]);
         }
 
         return numbers;
