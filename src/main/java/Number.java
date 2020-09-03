@@ -19,12 +19,10 @@ public class Number {
             if (i == 2) {
                 if (numbers[i-1] == numbers[i]) {
                     numbers[i] = random.nextInt(10);
-                    System.out.println("1");
                 }
 
                 if (numbers[i-2] == numbers[i]) {
                     numbers[i] = random.nextInt(10);
-                    System.out.println("2");
                 }
             }
             System.out.println("number : " + numbers[i]);

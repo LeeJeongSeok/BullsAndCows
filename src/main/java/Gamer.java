@@ -3,8 +3,14 @@ import java.util.Scanner;
 
 public class Gamer {
 
-    public void getNumbers() {
-        Number number = new Number();
-        number.setRandomNumbers();
+    private int[] numbers;
+    Number number = new Number();
+
+    public Gamer() {
+        this.numbers = number.setRandomNumbers();
+    }
+
+    public int[] getNumbers() {
+        return numbers;
     }
 }
